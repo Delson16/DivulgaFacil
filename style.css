@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+:root {
+    --cor0: #0732f1;
+    --cor1: #004F90;
+    --cor2: #4693ce;
+    --cor3: #4ba6e2;
+    --cor4: #ebf6ff;
+    --cor5: #fff;
+    --cor6: #000219;
+    --cor7: #ffee00;
+    
+    }
+main{
+    overflow: hidden;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor1);
+    padding-inline: 5%;
+    padding-bottom: 2vh;
+}
+.headerSuperior{
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+}
+.barraPesquisa{
+    width: 50%;
+    height: 30px;
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+}
+.barraPesquisa input{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+.barraPesquisa input:focus{
+    border: solid 1px var(--cor1);
+}
+.barraPesquisa button{
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+}
+.barraPesquisa button:hover{
+    cursor: pointer;
+}
+.barraPesquisa img{
+    height: 100%;
+}
+#hamburguerbtn{
+    display: none;
+}
+.login{
+    background-color: transparent;
+    border: none;
+    font-weight: 500;
+    font-size: 1.4em;
+    color: var(--cor4);
+    border-radius: 5px;
+    position: relative;
+}
+.login:hover{
+    cursor: pointer;
+}
+.login::after{
+    content: "";
+    background-color: var(--cor7);
+    width: 0%;
+    height: 2.5px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transition: ease .8s;
+    transform: translate(-50%, -50%);
+}
+.login:hover::after{
+    width: 100%;
+    transition: ease .4s;
+}
+header nav{
+    width: 100%;
+}
+header nav .login{
+    display: none;
+}
+header nav a{
+    text-decoration: none;
+    color: var(--cor4);
+    font-weight: 400;
+    font-size: 1em;
+}
+header nav a:hover{
+    text-decoration: underline;
+    color: var(--cor5);
+}
+header nav ul{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    list-style: none;
+}
+
+@media (max-width: 450px) {
+    .headerSuperior .login{
+        display: none;
+    }
+    #hamburguerbtn{
+        border: none;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+    #hamburguerbtn:hover{
+        cursor: pointer;
+    }
+    #hamburguerbtn img{
+        width: 100%;
+    }
+    header nav{
+        transition: ease .5s;
+        margin-right: -60%;
+        background-color: var(--cor1);
+        width: 60%;
+        height: 100vh;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: grid;
+        grid-template-rows: 15% 75%;
+        row-gap: 5vh;  
+        padding: 20px;   
+    }
+    header nav .login{
+        display: block;
+        justify-self: start;
+        align-self: start;
+    }
+    header nav ul{
+        flex-direction: column;
+        row-gap: 40px;
+        align-self: start;
+        height: 100%;
+        width: 100%;
+    }
+    header nav li{
+        width: 100%;
+        border: solid var(--cor4) 1px;
+        border-radius: 5px;
+        text-align: center;
+        justify-content: center;
+        height: 50px;
+    }
+    header nav li a{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navActive{
+        margin: 0px !important;
+        transition: ease .5s;
+    }
+    .hamburguerActive{
+        z-index: 1;
+    }
+
+
+}
